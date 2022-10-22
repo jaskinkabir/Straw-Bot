@@ -1,0 +1,225 @@
+{
+"request": {
+    "method": "GET",
+    "url": "https://onepiecechapters.com/mangas/5/one-piece?2022-10-213964",
+    "httpVersion": "http/2.0",
+    "headers": [
+      {
+        "name": ":authority",
+        "value": "onepiecechapters.com"
+      },
+      {
+        "name": ":method",
+        "value": "GET"
+      },
+      {
+        "name": ":path",
+        "value": "/mangas/5/one-piece?2022-10-213964"
+      },
+      {
+        "name": ":scheme",
+        "value": "https"
+      },
+      {
+        "name": "accept",
+        "value": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
+      },
+      {
+        "name": "accept-encoding",
+        "value": "gzip, deflate, br"
+      },
+      {
+        "name": "accept-language",
+        "value": "en-US,en;q=0.9"
+      },
+      {
+        "name": "cache-control",
+        "value": "max-age=0"
+      },
+      {
+        "name": "cookie",
+        "value": "__gads=ID=47e019e0fe7889bd-227ed020bbd700b8:T=1666369374:RT=1666369374:S=ALNI_MY1Cq4BDdrvG_O_jlm18P-cs6hOsQ; __gpi=UID=0000088f66034029:T=1666369374:RT=1666369374:S=ALNI_MZh-qAwkk6mRYa8bQwf2ntJdOoICQ; _gid=GA1.2.1954738004.1666369374; _au_1d=AU1D-0100-001666369375-GLKD1W0E-H0NT; _pbjs_userid_consent_data=3524755945110770; _fbp=fb.1.1666369375461.986117323; _cc_id=12de861cde7e7550681cbb004bc504d; panoramaId_expiry=1666974178675; panoramaId=2cdfa70d3756dff7ef79693c5f9d4945a702bdc1e39d1594cd7dc20fa287a63f; _ga_FS7ZSFKXT2=GS1.1.1666369375.1.1.1666369383.0.0.0; _ga_65659PLZ57=GS1.1.1666369374.1.1.1666369383.0.0.0; _au_last_seen_pixels=eyJhcG4iOjE2NjYzNjkzNzUsInR0ZCI6MTY2NjM2OTM3NSwicHViIjoxNjY2MzY5Mzc1LCJhZHgiOjE2NjYzNjkzNzUsImdvbyI6MTY2NjM2OTM3NSwib3BlbngiOjE2NjYzNjkzNzUsInRhYm9vbGEiOjE2NjYzNjkzNzUsImJlZXMiOjE2NjYzNjkzNzUsInBwbnQiOjE2NjYzNjkzNzUsImFkbyI6MTY2NjM2OTM3NSwiaW1wciI6MTY2NjM2OTM4NCwicnViIjoxNjY2MzY5Mzg0LCJtZWRpYW1hdGgiOjE2NjYzNjkzODQsInVucnVseSI6MTY2NjM2OTM4NCwic29uIjoxNjY2MzY5Mzg0LCJzbWFydCI6MTY2NjM2OTM4NH0=; _ga=GA1.2.1754283446.1666369374; FCNEC=%5B%5B%22AKsRol-cAPuTIRhJu32XXZ95BXcCE0oIFb_j2t-7VJxeVl_rxIUiUsNtCWnXb_3HibfuTXYSaYG0LAWPmLjmu84bTV4etlZGiK5J5C5h78o1sdeEuj24ZxrGv7XBEiP4bfICH_bocOBz_taf5KxocclGXMuXYNDuTQ%3D%3D%22%5D%2Cnull%2C%5B%5D%5D"
+      },
+      {
+        "name": "referer",
+        "value": "https://onepiecechapters.com/mangas/5/one-piece"
+      },
+      {
+        "name": "sec-ch-ua",
+        "value": "\"Not-A.Brand\";v=\"99\", \"Opera GX\";v=\"91\", \"Chromium\";v=\"105\""
+      },
+      {
+        "name": "sec-ch-ua-mobile",
+        "value": "?0"
+      },
+      {
+        "name": "sec-ch-ua-platform",
+        "value": "\"Windows\""
+      },
+      {
+        "name": "sec-fetch-dest",
+        "value": "document"
+      },
+      {
+        "name": "sec-fetch-mode",
+        "value": "navigate"
+      },
+      {
+        "name": "sec-fetch-site",
+        "value": "same-origin"
+      },
+      {
+        "name": "sec-fetch-user",
+        "value": "?1"
+      },
+      {
+        "name": "upgrade-insecure-requests",
+        "value": "1"
+      },
+      {
+        "name": "user-agent",
+        "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36 OPR/91.0.4516.72"
+      }
+    ],
+    "queryString": [
+      {
+        "name": "2022-10-213964",
+        "value": ""
+      }
+    ],
+    "cookies": [
+      {
+        "name": "__gads",
+        "value": "ID=47e019e0fe7889bd-227ed020bbd700b8:T=1666369374:RT=1666369374:S=ALNI_MY1Cq4BDdrvG_O_jlm18P-cs6hOsQ",
+        "path": "/",
+        "domain": ".onepiecechapters.com",
+        "expires": "2023-11-15T16:22:54.000Z",
+        "httpOnly": false,
+        "secure": false
+      },
+      {
+        "name": "__gpi",
+        "value": "UID=0000088f66034029:T=1666369374:RT=1666369374:S=ALNI_MZh-qAwkk6mRYa8bQwf2ntJdOoICQ",
+        "path": "/",
+        "domain": ".onepiecechapters.com",
+        "expires": "2023-11-15T16:22:54.000Z",
+        "httpOnly": false,
+        "secure": false
+      },
+      {
+        "name": "_gid",
+        "value": "GA1.2.1954738004.1666369374",
+        "path": "/",
+        "domain": ".onepiecechapters.com",
+        "expires": "2022-10-22T16:23:03.000Z",
+        "httpOnly": false,
+        "secure": false
+      },
+      {
+        "name": "_au_1d",
+        "value": "AU1D-0100-001666369375-GLKD1W0E-H0NT",
+        "path": "/",
+        "domain": ".onepiecechapters.com",
+        "expires": "2023-10-21T16:23:03.796Z",
+        "httpOnly": false,
+        "secure": false
+      },
+      {
+        "name": "_pbjs_userid_consent_data",
+        "value": "3524755945110770",
+        "path": "/",
+        "domain": "onepiecechapters.com",
+        "expires": "2022-11-20T16:23:03.000Z",
+        "httpOnly": false,
+        "secure": false,
+        "sameSite": "Lax"
+      },
+      {
+        "name": "_fbp",
+        "value": "fb.1.1666369375461.986117323",
+        "path": "/",
+        "domain": ".onepiecechapters.com",
+        "expires": "2023-01-19T16:23:04.000Z",
+        "httpOnly": false,
+        "secure": false
+      },
+      {
+        "name": "_cc_id",
+        "value": "12de861cde7e7550681cbb004bc504d",
+        "path": "/",
+        "domain": ".onepiecechapters.com",
+        "expires": "2023-07-18T16:22:55.000Z",
+        "httpOnly": false,
+        "secure": false,
+        "sameSite": "Lax"
+      },
+      {
+        "name": "panoramaId_expiry",
+        "value": "1666974178675",
+        "path": "/",
+        "domain": ".onepiecechapters.com",
+        "expires": "2022-10-28T16:22:58.000Z",
+        "httpOnly": false,
+        "secure": false,
+        "sameSite": "Lax"
+      },
+      {
+        "name": "panoramaId",
+        "value": "2cdfa70d3756dff7ef79693c5f9d4945a702bdc1e39d1594cd7dc20fa287a63f",
+        "path": "/",
+        "domain": ".onepiecechapters.com",
+        "expires": "2022-10-28T16:22:58.000Z",
+        "httpOnly": false,
+        "secure": false,
+        "sameSite": "Lax"
+      },
+      {
+        "name": "_ga_FS7ZSFKXT2",
+        "value": "GS1.1.1666369375.1.1.1666369383.0.0.0",
+        "path": "/",
+        "domain": ".onepiecechapters.com",
+        "expires": "2023-11-25T16:23:03.663Z",
+        "httpOnly": false,
+        "secure": false
+      },
+      {
+        "name": "_ga_65659PLZ57",
+        "value": "GS1.1.1666369374.1.1.1666369383.0.0.0",
+        "path": "/",
+        "domain": ".onepiecechapters.com",
+        "expires": "2023-11-25T16:23:03.791Z",
+        "httpOnly": false,
+        "secure": false
+      },
+      {
+        "name": "_au_last_seen_pixels",
+        "value": "eyJhcG4iOjE2NjYzNjkzNzUsInR0ZCI6MTY2NjM2OTM3NSwicHViIjoxNjY2MzY5Mzc1LCJhZHgiOjE2NjYzNjkzNzUsImdvbyI6MTY2NjM2OTM3NSwib3BlbngiOjE2NjYzNjkzNzUsInRhYm9vbGEiOjE2NjYzNjkzNzUsImJlZXMiOjE2NjYzNjkzNzUsInBwbnQiOjE2NjYzNjkzNzUsImFkbyI6MTY2NjM2OTM3NSwiaW1wciI6MTY2NjM2OTM4NCwicnViIjoxNjY2MzY5Mzg0LCJtZWRpYW1hdGgiOjE2NjYzNjkzODQsInVucnVseSI6MTY2NjM2OTM4NCwic29uIjoxNjY2MzY5Mzg0LCJzbWFydCI6MTY2NjM2OTM4NH0=",
+        "path": "/",
+        "domain": ".onepiecechapters.com",
+        "expires": "2023-10-21T16:23:03.797Z",
+        "httpOnly": false,
+        "secure": false
+      },
+      {
+        "name": "_ga",
+        "value": "GA1.2.1754283446.1666369374",
+        "path": "/",
+        "domain": ".onepiecechapters.com",
+        "expires": "2023-11-25T16:23:03.995Z",
+        "httpOnly": false,
+        "secure": false
+      },
+      {
+        "name": "FCNEC",
+        "value": "%5B%5B%22AKsRol-cAPuTIRhJu32XXZ95BXcCE0oIFb_j2t-7VJxeVl_rxIUiUsNtCWnXb_3HibfuTXYSaYG0LAWPmLjmu84bTV4etlZGiK5J5C5h78o1sdeEuj24ZxrGv7XBEiP4bfICH_bocOBz_taf5KxocclGXMuXYNDuTQ%3D%3D%22%5D%2Cnull%2C%5B%5D%5D",
+        "path": "/",
+        "domain": ".onepiecechapters.com",
+        "expires": "2023-10-21T16:23:05.000Z",
+        "httpOnly": false,
+        "secure": false
+      }
+    ],
+    "headersSize": -1,
+    "bodySize": 0
+  }
+}

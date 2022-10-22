@@ -1,0 +1,14 @@
+{
+    "testing": true,
+    "embedcolor": "0x9bbe97",
+    "guilds": [
+        860332677852037150
+    ],
+    "token": "MTAzMzA3NjA1NzExMDIzMzE4MA.Ga1AqL.0YWCNA7nB8U5mX5i7MDzyqw4V-1VgVW905a9Jk",
+    "prefix": "#",
+    "guildtest": [
+        860332677852037150
+    ],
+    "tokentest": "OTMyMjMwNDE5NjI0MTA4MDUy.YeP9PA.ipOnVY2LkwlivA2Q8WzSxCvm9XU",
+    "prefixtest": "!"
+}
