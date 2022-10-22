@@ -168,3 +168,5 @@ logo.png
 *.png
 ~$URDLE 2.docx
 SLURDLE 2.docx
+
+settings.json
