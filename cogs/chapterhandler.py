@@ -156,7 +156,6 @@ class ChapterHandler(commands.Cog):
         
       deltaNextThursday = datetime.timedelta(days=daysUntilThursday)
       
-      
       return datetime.datetime.combine(date=now.date() + deltaNextThursday, time = datetime.time(hour = 2, tzinfo=tz))
     
     def getTimeToNextCheck(self):
@@ -176,11 +175,12 @@ class ChapterHandler(commands.Cog):
     #*Task Loop Methods
     @tasks.loop(hours=24)
     async def autoStartChecks(self):
-        await asyncio.sleep(self.getTimeToNextCheck()) #Wait until 10:00 AM
+        await asyncio.sleep(self.getTimeToNextCheck()) #Wait until next check
+        
+        
         self.cbreak = 0
         
-        
-        await self.changeSlur()
+    
     
     
     #*User Methods
