@@ -1,5 +1,6 @@
 import json
 settings = {
+    "embedcolor": "0x9bbe97",
     'testing': False,
     "guilds": [
         860332677852037150
