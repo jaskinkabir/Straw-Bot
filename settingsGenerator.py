@@ -13,5 +13,7 @@ settings = {
 
 token = input("Enter token: ")
 
+settings['token']=token
+
 with open("settings.json", "w") as f:
     json.dump(settings, f, indent=4)
