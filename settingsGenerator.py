@@ -1,6 +1,6 @@
 import json
 settings = {
-    'testing': True,
+    'testing': False,
     "guilds": [
         860332677852037150
     ],
