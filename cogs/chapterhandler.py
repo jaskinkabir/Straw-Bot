@@ -1,5 +1,6 @@
 import requests
 import scripts.epic_utils as epic_utils
+from discord import Client
 from discord.ext import commands, tasks
 import os
 from scripts.initlog import getLogger
@@ -101,17 +102,23 @@ def setup(bot):
     getLogger().log("Extensions.ChapterHandler: setup ext")
     
     
+    
 class ChapterHandler(commands.Cog):
-    def __init__(self, bot):
+    def __init__(self, bot: Client):
         self.bot = bot
         self.logger=getLogger()
         self.logger.log("Cogs.ChapterHandler: Initialized cog")
-        
-        self.curchap=1064
-        self.cbreak = 0
+        self.currentChapter: int =self.getLatestChapter()[1]
+        self.logger.log("Cogs.ChapterHandler: Current chapter is "+str(self.currentChapter))
+        self.chapterLoop.start()
       
-        
+    #* Operational Methods  
     def getLatestChapter(self):
+      """
+
+      Returns:
+          tuple(str, int): link and number of latest chapter
+      """
       response = requests.get(url=requesturl,params=params, stream=True)
 
       for line in response.iter_lines(decode_unicode=True):
@@ -127,74 +134,26 @@ class ChapterHandler(commands.Cog):
               if char == "\"":
                   quotes.append(ind)
                   numQuotes +=1
-          link = baseurl + line[quotes[0]+1:quotes[1]]
+          link: str = baseurl + line[quotes[0]+1:quotes[1]]
           break
-      chapNum = link[-4:]
+      chapNum: int = int(link[-4:])
       return (link,chapNum)
     
     
-    def getNextCheckDatetime(self):
-      """
-
-      Returns:
-          datetime: datetime object of next check start
-      """
-      
-      tz=pytz.timezone("America/New_York")
-      now=datetime.datetime.now(tz)
-      twoam = datetime.time(hour=2, tzinfo = tz)
-      
-      daysUntilThursday = 3 - now.weekday()
-      
-      if daysUntilThursday < 0:
-        daysUntilThursday += 8
-      
-      if daysUntilThursday == 0 and now.time() > twoam:
-        daysUntilThursday = 7
-        
-      daysUntilThursday += 7 * self.cbreak
-        
-      deltaNextThursday = datetime.timedelta(days=daysUntilThursday)
-      
-      return datetime.datetime.combine(date=now.date() + deltaNextThursday, time = datetime.time(hour = 2, tzinfo=tz))
-    
-    def getTimeToNextCheck(self):
-        """ 
-        Returns:
-            float secondsToNextCheck
-        """
-        #thursday = 3
-          
-        tz=pytz.timezone("America/New_York")
-        now=datetime.datetime.now(tz)
-        
-        deltaNextCheck = self.getNextCheckDatetime() - now
-        
-        return deltaNextCheck.total_seconds()
-    
     #*Task Loop Methods
-    @tasks.loop(hours=24)
-    async def autoStartChecks(self):
-        await asyncio.sleep(self.getTimeToNextCheck()) #Wait until next check
+    @tasks.loop(minutes=30)
+    async def chapterLoop(self):
+      
+      link, num = self.getLatestChapter()
+      
+      if int(num) > self.currentChapter:
+        self.currentChapter = int(num)
+        with open("settings.json") as f:
+          settings = json.load(f)
+          for guild,channel in settings["channels"].items():
+            await self.bot.get_channel(int(channel)).send(f"Yo new chapter out!\nChapter {num} can be found at {link}")
         
-        
-        self.cbreak = 0
-        
-    
-    
-    
-    #*User Methods
-    @cog_ext.cog_slash(
-      name = "isonbreak",
-      description="Is Oda taking a break?",
-      guild_ids=guild_ids
-    )
-    async def isonbreak(self, ctx: SlashContext):
-      if not self.cbreak:
-        await ctx.send("There is no break this week", hidden=True)
-        return
-      await ctx.send(f"One Piece is currently on a {self.cbreak} week break", hidden=True)
-    
+    #*User Methods   
     @cog_ext.cog_slash(
       name = "LatestChapter",
       description="Return latest chapter",
@@ -206,38 +165,11 @@ class ChapterHandler(commands.Cog):
       
       await ctx.send(f"Chapter {number} can be found at {link} t", hidden=True)
       
-
-    #*Admin Methods 
+    #*Admin Methods
     @commands.command()
     @admin_command
-    async def setbreak(self, ctx, weeks=1):
-      self.cbreak = weeks
-      
-    @commands.command()
-    @admin_command
-    async def nextcheck(self, ctx):
-      dt = self.getNextCheckDatetime()
-      
-      await ctx.send(dt.__str__())
+    async def setChapter(self, ctx, chap: int):
+      self.currentChapter = int(chap)
+      await ctx.send(f"Current chapter set to {chap}")
       
       
-      
-    
-
-
-
-
-    
-
-
-class ChapDelta():
-    def __init__(self, delta: datetime.timedelta):
-        self.delta = delta
-        
-        hours=delta.seconds//3600
-        minutes=(delta.seconds-hours*3600)//60
-        
-        self.str = f"{delta.seconds//3600} hours and {minutes} minutes"
-        
-    def total_seconds(self):
-        return self.delta.total_seconds()

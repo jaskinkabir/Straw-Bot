@@ -14,4 +14,4 @@ def getGuildIds():
         return ret
     else:
         ret: list[int] = settings["guilds"]
-        return ret
+        return ret   
