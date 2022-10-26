@@ -3,7 +3,8 @@ settings = {
     "embedcolor": "0x9bbe97",
     'testing': False,
     "guilds": [
-        860332677852037150
+        860332677852037150,
+        1006246190729400510
     ],
     "prefix": "!",
     "channels": {
