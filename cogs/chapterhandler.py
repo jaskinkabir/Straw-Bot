@@ -141,7 +141,7 @@ class ChapterHandler(commands.Cog):
     
     
     #*Task Loop Methods
-    @tasks.loop(seconds=15)
+    @tasks.loop(minutes=10)
     async def chapterLoop(self):
       sentLink = False
       link, num = self.getLatestChapter()
