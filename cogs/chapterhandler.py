@@ -185,6 +185,7 @@ class ChapterHandler(commands.Cog):
         lines = f.readlines()
         if numberOfLogs > len(lines):
           numberOfLogs = len(lines)
-        await ctx.send(f"```{'\n'.join(lines[-numberOfLogs:])}```")
+          linestr = '\n'.join(lines[-numberOfLogs:])
+        await ctx.send(f"```{linestr}```")
       
       
