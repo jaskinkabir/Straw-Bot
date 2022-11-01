@@ -141,17 +141,21 @@ class ChapterHandler(commands.Cog):
     
     
     #*Task Loop Methods
-    @tasks.loop(minutes=30)
+    @tasks.loop(seconds=15)
     async def chapterLoop(self):
-      
+      sentLink = False
       link, num = self.getLatestChapter()
       
       if int(num) > self.currentChapter:
         self.currentChapter = int(num)
+        sentLink = True
         with open("settings.json") as f:
           settings = json.load(f)
           for guild,channel in settings["channels"].items():
             await self.bot.get_channel(int(channel)).send(f"Yo new chapter out!\nChapter {num} can be found at {link}")
+            
+      with open("checklog.txt", "a") as f:
+        f.write(f"Checked for new chapter at {datetime.datetime.now()} | current chapter: {self.currentChapter} | Found chapter: {num} | Sent link: {sentLink}" + '\n')
         
     #*User Methods   
     @cog_ext.cog_slash(
@@ -168,8 +172,19 @@ class ChapterHandler(commands.Cog):
     #*Admin Methods
     @commands.command()
     @admin_command
-    async def setChapter(self, ctx, chap: int):
+    async def setchapter(self, ctx, chap: int):
       self.currentChapter = int(chap)
       await ctx.send(f"Current chapter set to {chap}")
+      
+    @commands.command()
+    @admin_command
+    async def sendlogs(self, ctx, numberOfLogs: int):
+      numberOfLogs = int(numberOfLogs)
+      
+      with open("checklog.txt", "r") as f:
+        lines = f.readlines()
+        if numberOfLogs > len(lines):
+          numberOfLogs = len(lines)
+        await ctx.send(f"```{'\n'.join(lines[-numberOfLogs:])}```")
       
       

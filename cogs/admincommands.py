@@ -25,7 +25,7 @@ def admin_command(func): #Makes a command into an admin only command
     async def inner(*args):
         ctx=args[1]
         author=ctx.message.author
-        argstr=args[3:]
+        argstr=', '.join(args[3:])
         logger=getLogger()
         
         if author.id in [195984503880024065, 371016632522375172]:
